@@ -41,7 +41,7 @@ import static org.testng.Assert.assertEquals;
  * @author Neil Manvar 
  */ 
 @Listeners({SauceOnDemandTestListener.class}) 
-public class SampleSauceTest implements SauceOnDemandSessionIdProvider, SauceOnDemandAuthenticationProvider { 
+public class DefectTest implements SauceOnDemandSessionIdProvider, SauceOnDemandAuthenticationProvider { 
 
     public String username = System.getenv("SAUCE_USER_NAME") != null ? System.getenv("SAUCE_USER_NAME") : System.getenv("SAUCE_USERNAME"); 
     public String accesskey = System.getenv("SAUCE_API_KEY") != null ? System.getenv("SAUCE_API_KEY") : System.getenv("SAUCE_ACCESS_KEY"); 
