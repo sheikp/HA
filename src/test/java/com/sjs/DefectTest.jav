@@ -1,21 +1,9 @@
-package com.yourcompany; 
-
-
-
-
+package com.sjs; 
 
 import com.saucelabs.common.SauceOnDemandAuthentication; 
 import com.saucelabs.common.SauceOnDemandSessionIdProvider; 
 import com.saucelabs.testng.SauceOnDemandAuthenticationProvider; 
 import com.saucelabs.testng.SauceOnDemandTestListener; 
-
-
-
-
-
-
-
-
 
 import org.openqa.selenium.By; 
 import org.openqa.selenium.Keys; 
@@ -43,11 +31,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
+import java.sql.*;
 
 import static org.testng.Assert.assertEquals; 
-
-
-
 
 /** 
  * Simple TestNG test which demonstrates being instantiated via a DataProvider in order to supply multiple browser combinations. 
@@ -56,7 +42,6 @@ import static org.testng.Assert.assertEquals;
  */ 
 @Listeners({SauceOnDemandTestListener.class}) 
 public class SampleSauceTest implements SauceOnDemandSessionIdProvider, SauceOnDemandAuthenticationProvider { 
-
 
     public String username = System.getenv("SAUCE_USER_NAME") != null ? System.getenv("SAUCE_USER_NAME") : System.getenv("SAUCE_USERNAME"); 
     public String accesskey = System.getenv("SAUCE_API_KEY") != null ? System.getenv("SAUCE_API_KEY") : System.getenv("SAUCE_ACCESS_KEY"); 
@@ -68,7 +53,6 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider, SauceOnD
      * supplied by environment variables or from an external file, use the no-arg {@link SauceOnDemandAuthentication} constructor. 
      */ 
 public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(username, accesskey); 
-
 
     /** 
      * ThreadLocal variable which contains the  {@link WebDriver} instance which is used to perform browser interactions with. 
@@ -302,7 +286,7 @@ public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthenticat
      Statement stmt = null;
      // JDBC driver name and database URL
      final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-     final String DB_URL = "jdbc:mysql://us-cdbr-azure-central-a.cloudapp.net:3306/ClearDBDispatch";
+     final String DB_URL = "jdbc:mysql://us-cdbr-azure-central-a.cloudapp.net/ClearDBDispatch";
 
      //  Database credentials
      final String USER = "bdedbb1076214d";
